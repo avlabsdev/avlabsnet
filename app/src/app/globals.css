@@ -24,3 +24,11 @@ body {
 h1 {
   @apply text-8xl font-bold;
 }
+
+h2 {
+  @apply text-6xl font-semibold text-green-500 leading-tight;
+}
+
+p {
+  @apply text-white leading-relaxed text-lg;
+}
