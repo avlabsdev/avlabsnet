@@ -13,7 +13,7 @@ export default function Home() {
             <h2>Web application software development</h2>
             <p>Everything you need for your next project. User interface design, front-end development, back-end development, and more. Reach out and inquire today.</p>
           </div>
-          <Image src="/3d-blocks-blocks-composition-54.png" alt="3d blocks" width="1604" height="1439" className="w-1/2 h-auto ml-auto" priority />
+          <Image src="/3d-blocks-blocks-composition-54.png" alt="3d blocks" width="1604" height="1439" className="w-1/2 h-auto" priority />
         </div>
       </div>
     </>
