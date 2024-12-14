@@ -20,23 +20,32 @@ export default function Services() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const cachedData = localStorage.getItem('servicesData');
-        if (cachedData) {
-            setData(JSON.parse(cachedData));
-            setLoading(false);
-        } else {
-            fetch("https://x8ki-letl-twmt.n7.xano.io/api:HYBsW_cR/services-avlabs")
-                .then((response) => response.json())
-                .then((data) => {
-                    setData(data);
-                    localStorage.setItem('servicesData', JSON.stringify(data));
-                    setLoading(false);
-                })
-                .catch((error) => {
-                    console.error("Error fetching data:", error);
-                    setLoading(false);
-                });
-        }
+        const fetchData = async () => {
+            try {
+                const response = await fetch("https://x8ki-letl-twmt.n7.xano.io/api:HYBsW_cR/services-avlabs");
+                const newData = await response.json();
+                const cachedData = localStorage.getItem('servicesData');
+
+                if (cachedData) {
+                    const parsedCachedData = JSON.parse(cachedData);
+                    if (JSON.stringify(parsedCachedData) !== JSON.stringify(newData)) {
+                        setData(newData);
+                        localStorage.setItem('servicesData', JSON.stringify(newData));
+                    } else {
+                        setData(parsedCachedData);
+                    }
+                } else {
+                    setData(newData);
+                    localStorage.setItem('servicesData', JSON.stringify(newData));
+                }
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchData();
     }, []);
 
     if (loading) {
