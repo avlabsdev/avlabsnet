@@ -25,7 +25,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <script src="https://kit.fontawesome.com/4a62263e08.js" crossOrigin="anonymous"></script>
+        <link href="./fontawesome/css/fontawesome.css" rel="stylesheet" />
+        <link href="./fontawesome/css/brands.css" rel="stylesheet" />
+        <link href="./fontawesome/css/solid.css" rel="stylesheet" />
       </head>
       <body
         className={`${poppins} antialiased flex flex-col gap-16`}
