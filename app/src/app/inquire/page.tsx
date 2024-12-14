@@ -5,8 +5,8 @@
 
 export default function Inquire() {
     return (
-        <>
+        <section>
             <h1>Inquire</h1>
-        </>
+        </section>
     );
 }
