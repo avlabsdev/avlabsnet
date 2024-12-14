@@ -17,17 +17,32 @@ export default function Services() {
     }
 
     const [data, setData] = useState<ServicesItem[]>([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch("https://x8ki-letl-twmt.n7.xano.io/api:HYBsW_cR/services-avlabs")
-            .then((response) => response.json())
-            .then((data) => setData(data))
-            .catch((error) => console.error("Error fetching data:", error));
+        const cachedData = localStorage.getItem('servicesData');
+        if (cachedData) {
+            setData(JSON.parse(cachedData));
+            setLoading(false);
+        } else {
+            fetch("https://x8ki-letl-twmt.n7.xano.io/api:HYBsW_cR/services-avlabs")
+                .then((response) => response.json())
+                .then((data) => {
+                    setData(data);
+                    localStorage.setItem('servicesData', JSON.stringify(data));
+                    setLoading(false);
+                })
+                .catch((error) => {
+                    console.error("Error fetching data:", error);
+                    setLoading(false);
+                });
+        }
     }, []);
 
-    if (!data) {
+    if (loading) {
         return <span>Loading...</span>;
     }
+
     return (
         <section>
             <h1>Services</h1>
