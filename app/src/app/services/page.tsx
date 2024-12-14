@@ -11,6 +11,7 @@ export default function Services() {
         title: string;
         description: string;
         img_url: string;
+        order: number;
     }
 
     const [data, setData] = useState<ServicesItem[]>([]);
