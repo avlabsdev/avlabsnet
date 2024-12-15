@@ -6,7 +6,7 @@
 export default function Inquire() {
     return (
         <section>
-            <h1>Inquire</h1>
+            <h1><i className="fa-solid fa-terminal text-4xl text-zinc-800"></i> Inquire</h1>
         </section>
     );
 }

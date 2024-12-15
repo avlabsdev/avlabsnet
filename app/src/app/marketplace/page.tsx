@@ -6,7 +6,7 @@
 export default function Marketplace() {
     return (
         <section>
-            <h1>Marketplace</h1>
+            <h1><i className="fa-solid fa-terminal text-4xl text-zinc-800"></i> Marketplace</h1>
         </section>
     );
 }

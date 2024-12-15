@@ -26,11 +26,14 @@ export default function Header() {
     if (!data) {
         return <span>Loading...</span>;
     }
+
+    const sortedData = data.sort((a, b) => a.order - b.order);
+
     return (
         <header className={"flex flex-row items-center justify-between py-8 container mx-auto"}>
             <Link href="/" className={"font-medium text-xl flex flex-row items-center gap-2"}><i className="fa-solid fa-flask-round-poison text-green-500 text-2xl"></i>AV Labs</Link>
             <nav className={"flex flex-row items-center gap-16"}>
-                {data.sort((a, b) => a.order - b.order).map((item: HeaderItem) => (
+                {sortedData.map((item: HeaderItem) => (
                     <Link key={item.id} href={item.url} className={"flex flex-row items-center gap-2 text-lg"}>
                         <i className={item.icon + " text-green-500 text-xl"}></i>
                         {item.title}
