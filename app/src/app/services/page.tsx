@@ -35,7 +35,7 @@ export default function Services() {
     return (
         <section>
             <h1><i className="fa-solid fa-terminal text-4xl text-zinc-800"></i> Services</h1>
-            <div className="flex flex-col gap-64 my-16">
+            <div className="flex flex-col gap-48 my-16">
                 {sortedData.map((item: ServicesItem) => (
                     <div key={item.id} className="flex flex-row gap-32 items-center">
                         <div className="w-1/2">

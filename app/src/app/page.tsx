@@ -15,6 +15,7 @@ export default function Home() {
             <p>Everything you need for your next project. User interface design, front-end development, back-end development, and more.</p>
           </div>
           <Link href="#/" className="bg-zinc-900 text-green-500 border border-zinc-800 text-lg rounded-xl w-fit py-3 px-8">Get started</Link>
+          <Image src="/joy.svg" alt="3d blocks" width="1604" height="1439" className="w-full h-auto mt-4 mx-auto" rel="preload" priority />
         </div>
         <Image src="/3d-blocks-blocks-composition-54.png" alt="3d blocks" width="1604" height="1439" className="w-1/2 h-auto" rel="preload" priority />
       </div>
