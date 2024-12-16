@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <section className="flex flex-col gap-16">
       <h1><i className="fa-solid fa-terminal text-4xl text-zinc-800"></i> Home</h1>
-      <div className="flex flex-row gap-16">
+      <div className="flex flex-row gap-16 items-start">
         <div className="flex flex-col gap-8 w-1/2">
           <div>
             <h2>Web application software development</h2>
